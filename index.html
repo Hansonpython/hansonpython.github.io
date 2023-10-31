@@ -70,7 +70,9 @@
       </style></head>
     <script>
         window.onerror = function(){return false};
-        ["error","log","warn"].forEach((func)=>{window.console[func] = function(){}})
+        console.error = function(){};
+        console.warn = function(){};
+        console.log = function(){}
     </script>
     <body>
     <canvas id="sakura" width="1280" height="652"></canvas>
