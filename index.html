@@ -1,1 +1,73 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Test</title></head><body><h1 style="color:red">Test</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul {
+
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+
+        background-color: #333;
+        /*border: 1px solid black;*/
+        overflow: hidden;
+    }
+
+    li {
+        /*浏览器顶部固定导航栏*/
+
+        /*position: fixed;*/
+        /*top: 0px;*/
+        /*width: 100%;*/
+
+
+        /*    浏览器的底部定位导航栏*/
+
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+
+        float: left;
+
+        /*border: 1px solid black;*/
+    }
+
+    a {
+        color: white;
+        display: block;
+        padding: 14px 16px;
+        text-decoration: none;
+
+
+    }
+
+    a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+
+    li {
+        border-right: 1px solid #bbb;
+    }
+
+    li:last-child {
+        border-right: none;
+    }
+</style>
+<body>
+
+<ul>
+    <li><a href="#">主页</a></li>
+    <li><a href="#">新闻</a></li>
+    <li><a href="#">联系方式</a></li>
+    <li style="float:right"><a href="#" class="active">关于</a></li>
+</ul>
+
+</body>
+</html>
