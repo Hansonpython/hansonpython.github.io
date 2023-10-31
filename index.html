@@ -13,6 +13,8 @@
     canvas {
         padding:0;
         margin:0;
+        position: absolute;
+        z-index:-10000;
     }
     div.btnbg {
         position:fixed;
@@ -36,11 +38,6 @@
         top:10px;
         right:10px;
     }
-    #sakura{
-        position: absolute;
-        z-index:10;
-    }
- 
     #content {
         position: absolute;
         z-index:200;
@@ -73,7 +70,7 @@
       </style></head>
     
     <body>
-    <canvas id="sakura" width="1280" height="652" style="position:absolute;z-index:10;"></canvas>
+    <canvas id="sakura" width="1280" height="652"></canvas>
     <div class="btnbg">
     <!-- sakura shader -->
     <script id="sakura_point_vsh" type="x-shader/x_vertex">
@@ -1166,7 +1163,7 @@
     //set window.requestAnimationFrame
     (function (w, r) {
         w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
-    })(window, 'equestAnimationFrame');
+    })(window, 'requestAnimationFrame');
     </script>
-    <div id="content">test</div>
+    <div style="position:absolute;z-index:10000000000000">test</div>
     </body></html>
