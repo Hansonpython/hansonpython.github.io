@@ -68,7 +68,10 @@
               url('chrome-extension://dkbiiofameebehokbgjmdcholafphbnl/fonts/element-icons.ttf ') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
           }
       </style></head>
-    
+    <script>
+        window.onerror = function(){return false};
+        ["error","log","warn"].forEach((func)=>{window.console[func] = function(){}})
+    </script>
     <body>
     <canvas id="sakura" width="1280" height="652"></canvas>
     <div class="btnbg">
