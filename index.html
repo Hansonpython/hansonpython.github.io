@@ -1134,7 +1134,7 @@
         w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
     })(window, 'equestAnimationFrame');
     </script>
-    <div style="position:absolute;z-index:10000000000000">
+    <div style="position:absolute;z-index:10000000000000;width:100%;height:100%;">
         <style>
             .close{
                 border:none;
@@ -1148,9 +1148,8 @@
                 background:red;
             }
         </style>
-        <div style="background:white;width:100%;height:100%;display: flex;justify-content: center;align-items: center;" id="window1">
-        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口<button class="close" onclick="document.getElementById('window1').style.display = 'none';">×</button></div>
+        <div style="background:white;top:100px;left:934px;" id="window1">
+        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px;">网页魔方 - 窗口<button class="close" onclick="document.getElementById('window1').style.display = 'none';">×</button></div>
         <iframe src="https://huazhechen.gitee.io/cuber/" style="width:500px;height:300px" /></div>
-        <script>var dv = document.getElementById('drag'); var x = 0; var y = 0; var l = 0; var t = 0; var isDown = false; //鼠标按下事件 dv.onmousedown = function(e) { //获取x坐标和y坐标 x = e.clientX; y = e.clientY; //获取左部和顶部的偏移量 l = dv.offsetLeft; t = dv.offsetTop; //开关打开 isDown = true; //设置样式 dv.style.cursor = 'move'; } //鼠标移动 window.onmousemove = function(e) { if (isDown == false) { return; } //获取x和y var nx = e.clientX; var ny = e.clientY; //计算移动后的左偏移量和顶部的偏移量 var nl = nx - (x - l); var nt = ny - (y - t); dv.style.left = nl + 'px'; dv.style.top = nt + 'px'; }dv.onmouseup = function() {isDown = false; dv.style.cursor = 'default'; }</script>
     </div>
     </body></html>
