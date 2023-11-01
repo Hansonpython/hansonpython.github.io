@@ -1135,9 +1135,29 @@
     (function (w, r) {
         w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
     })(window, 'equestAnimationFrame');
+    let card = document.getElementById("drag")
+    card.onmousedown = e => {
+                e.preventDefault();
+                let x = e.pageX - card.offsetLeft;
+                let y = e.pageY - card.offsetTop;
+                window.onmousemove = e => {
+                    const cx = e.pageX - x;
+                    const cy = e.pageY - y;
+                    card.style.cursor = "move";
+                    card.style.left = cx + "px"
+                    card.style.top = cy + "px";
+                    channel.postMessage(getScreenPoint(cx,cy));
+
+                };
+                window.onmouseup = () => {
+                    card.style.cursor = "none";
+                    window.onmousemove = null;
+                    window.onmouseup = null;
+                }
+            }
     </script>
     <div style="position:absolute;z-index:10000000000000">
-        <div id="drag" style="width:1000px;height:50px">dRAG</div>
-        <iframe src="https://huazhechen.gitee.io/cuber/" style="width:1000px;height:600px" />
+        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口</div>
+        <iframe src="https://huazhechen.gitee.io/cuber/" style="width:500px;height:300px" id="window" />
     </div>
     </body></html>
