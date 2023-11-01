@@ -1139,13 +1139,11 @@
                 window.onmousemove = e => {
                     const cx = e.pageX - x;
                     const cy = e.pageY - y;
-                    card.style.cursor = "move";
                     card.style.left = cx + "px"
                     card.style.top = cy + "px";
 
                 };
                 window.onmouseup = () => {
-                    card.style.cursor = "none";
                     window.onmousemove = null;
                     window.onmouseup = null;
                 }
