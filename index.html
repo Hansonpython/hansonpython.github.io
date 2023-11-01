@@ -1136,7 +1136,7 @@
     </script>
     <div style="position:absolute;z-index:10000000000000">
         <div style="background:white;user-select:none;">
-        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口</div>
+        <div id="drag" onmousedown="this.onmousedown(window.event);" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口</div>
         <iframe src="https://huazhechen.gitee.io/cuber/" style="width:500px;height:300px" /></div>
     </div>
     <script>const initalize = function(){let card = document.getElementById("drag");card.onmousedown = e => {e.preventDefault();let x = e.pageX - card.offsetLeft;let y = e.pageY - card.offsetTop;window.onmousemove = e => {const cx = e.pageX - x;const cy = e.pageY - y;card.style.left = cx + "px";card.style.top = cy + "px";};window.onmouseup = () => {window.onmousemove = null;window.onmouseup = null;}}}window.onload = initalize;</script>
