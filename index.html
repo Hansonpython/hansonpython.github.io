@@ -1137,7 +1137,10 @@
     <div style="position:absolute;z-index:10000000000000">
         <style>
             .close{
-                content:"×";
+                border:none;
+                border-radius:30px;
+                width:50px;
+                height:50px;
                 font-size:30px;
                 float:right;
             }
@@ -1146,7 +1149,7 @@
             }
         </style>
         <div style="background:white;">
-        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口<button class="close"/></div>
+        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口<button class="close">×</button></div>
         <iframe src="https://huazhechen.gitee.io/cuber/" style="width:500px;height:300px" /></div>
     </div>
     </body></html>
