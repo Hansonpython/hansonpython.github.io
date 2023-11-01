@@ -1135,9 +1135,18 @@
     })(window, 'equestAnimationFrame');
     </script>
     <div style="position:absolute;z-index:10000000000000">
-        <div style="background:white;user-select:none;">
-        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口</div>
+        <style>
+            .close{
+                content:"×";
+                font-size:30px;
+                float:right;
+            }
+            .close:hover{
+                background:red;
+            }
+        </style>
+        <div style="background:white;">
+        <div id="drag" style="width:500px;height:50px;background:white;text-align:center;font-size:25px">网页魔方 - 窗口<button class="close"/></div>
         <iframe src="https://huazhechen.gitee.io/cuber/" style="width:500px;height:300px" /></div>
     </div>
-    <script>const initalize = function(){let card = document.getElementById("drag");card.onmouseover = e => {console.log("card.onmousedown");e.preventDefault();let x = e.pageX - card.offsetLeft;let y = e.pageY - card.offsetTop;window.onmousemove = e => {const cx = e.pageX - x;const cy = e.pageY - y;card.style.left = cx + "px";card.style.top = cy + "px";};window.onmouseup = () => {window.onmousemove = null;window.onmouseup = null;}}}window.onload = initalize;</script>
     </body></html>
