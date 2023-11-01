@@ -1137,17 +1137,13 @@
     })(window, 'equestAnimationFrame');
     const initalize = function(){
     let card = document.getElementById("drag")
-    card.onmousedown = e => {
-                e.preventDefault();
-                let x = e.pageX - card.offsetLeft;
-                let y = e.pageY - card.offsetTop;
+    card.onmousedown = e => {e.preventDefault();let x = e.pageX - card.offsetLeft;let y = e.pageY - card.offsetTop;
                 window.onmousemove = e => {
                     const cx = e.pageX - x;
                     const cy = e.pageY - y;
                     card.style.cursor = "move";
                     card.style.left = cx + "px"
                     card.style.top = cy + "px";
-                    channel.postMessage(getScreenPoint(cx,cy));
 
                 };
                 window.onmouseup = () => {
